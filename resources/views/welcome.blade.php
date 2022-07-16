@@ -39,29 +39,36 @@
                 <img src="{{$recipe->food_image}}" class="d-block w-100 ">
 
                 <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted"> <b> {{$recipe->food_title}} </b></h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><b> {{$recipe->food_title}} </b></h6>
                         <p class="card-text">{{$recipe->food_description}}</p>
+                        @if (!$recipe->food_staus)
+                        <a href="/liketoggle/{{$recipe->id}}" class="btn btn-primary"><i class="bi bi-hand-thumbs-up-fill"></i>Like</a>
+                        @else
+                        <a href="/liketoggle/{{$recipe->id}}" class="btn btn-danger"><i class="bi bi-hand-thumbs-down-fill"></i>Dislike</a>
+                        @endif
 
-                        <button  class="card-link btn btn-primary toggle-class" data-onstyle="primary" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $recipe->food_status ? '' : '' }}><i class="bi bi-hand-thumbs-up-fill"></i>{{$recipe->food_staus}}
+                        {{-- <button type="submit" id="toggleLike"  {{$class}}="card-link btn {{$btn_color}} toggle-class" ><i class="bi bi-hand-thumbs-up-fill"></i>{{$recipe->food_staus}}
 
                         </button>
+                        <button type="submit" id="toggleDislike"  {{$class}}="card-link btn {{$btn_color_danger}} toggle-class" >{{$recipe->food_staus}}<i class="bi {{$btn_icon_down}}" id="toggleDislike"></i> </button> --}}
                         {{-- <button  class="card-link btn btn-primary toggle-class" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $recipe->food_status ? '' : '' }}><i class="bi bi-hand-thumbs-up-fill"></i>{{$recipe->food_staus}}
                             <input data-id="{{$recipe->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Like" data-off="Deslike" {{ $recipe->food_status ? '' : '' }}>
                         </button> --}}
                 </div>
+
             </div>
 
-            {{-- @endforeach --}}
-            {{-- <div class="card">
+                {{-- @endforeach --}}
+                {{-- <div class="card">
 
-                    <img src="{{asset('images/food1.jpg')}}" class="d-block w-100 ">
+                        <img src="{{asset('images/food1.jpg')}}" class="d-block w-100 ">
 
-                <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted"> <b> Food subtitle </b></h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link btn btn-primary"><i class="bi bi-hand-thumbs-down-fill"></i></i>Like</a>
-                </div>
-            </div> --}}
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted"> <b> Food subtitle </b></h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link btn btn-primary"><i class="bi bi-hand-thumbs-down-fill"></i></i>Like</a>
+                    </div>
+                </div> --}}
         </div>
         @endforeach
 
@@ -72,3 +79,10 @@
 </div>
 
 @endsection
+{{-- @section('footer')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#example').DataTable();
+        });
+    </script>
+@endsection --}}

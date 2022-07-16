@@ -19,7 +19,7 @@ class CreateRecipesTable extends Migration
             $table->string('food_title');
             $table->string('food_image');
             $table->text('food_description');
-            $table->string('food_staus');
+            $table->boolean('food_staus')->default(0);
         });
     }
 
