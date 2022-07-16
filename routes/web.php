@@ -48,6 +48,8 @@ Route::get('/recipeToggle', [RecipeController::class, 'toggleStatus']);
 
 //Route::get('/');
 Route::get('/liketoggle/{id}', 'RecipeController@liketoggle');
+Route::get('/disliketoggle/{id}', 'RecipeController@disliketoggle');
+
 // Route::get('/liketoggle/{id}',  function ($id){
 //         //dd(Recipe::find($id));
 //         $recipe = Recipe::find($id);

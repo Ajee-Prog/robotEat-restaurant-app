@@ -7,13 +7,13 @@
     <div class="row mt-1">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
+              <div class="carousel-item active" data-bs-interval="2000">
                 <img src="{{asset('images/restaurant-banner.jpg')}}" class="d-block w-100 " style="height: 525px;">
               </div>
               <div class="carousel-item" data-bs-interval="2000">
                 <img src="{{asset('images/food1.jpg')}}" class="d-block w-100 " alt="..." style="height: 525px;">
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item" data-bs-interval="2000">
                 <img src="{{asset('images/food1.jpg')}}" class="d-block w-100 " alt="..." style="height: 525px;">
               </div>
             </div>
@@ -44,7 +44,7 @@
                         @if (!$recipe->food_staus)
                         <a href="/liketoggle/{{$recipe->id}}" class="btn btn-primary"><i class="bi bi-hand-thumbs-up-fill"></i>Like</a>
                         @else
-                        <a href="/liketoggle/{{$recipe->id}}" class="btn btn-danger"><i class="bi bi-hand-thumbs-down-fill"></i>Dislike</a>
+                        <a href="/disliketoggle/{{$recipe->id}}" class="btn btn-danger"><i class="bi bi-hand-thumbs-down-fill"></i>Dislike</a>
                         @endif
 
                         {{-- <button type="submit" id="toggleLike"  {{$class}}="card-link btn {{$btn_color}} toggle-class" ><i class="bi bi-hand-thumbs-up-fill"></i>{{$recipe->food_staus}}

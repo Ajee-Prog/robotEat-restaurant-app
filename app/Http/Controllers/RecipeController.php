@@ -69,4 +69,11 @@ class RecipeController extends Controller
         return redirect()->back();
             //return $id;
     }
+    public function disliketoggle($id){
+        $recipe = Recipe::find($id);
+        $recipe->food_staus = 0;
+        $recipe->save();
+        return redirect()->back();
+            //return $id;
+    }
 }
